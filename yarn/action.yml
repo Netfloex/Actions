@@ -8,7 +8,7 @@ inputs:
         default: 12.22.7
 
 runs:
-    using: "composite"
+    using: composite
     steps:
         - name: Checkout
           uses: actions/checkout@v2
@@ -21,3 +21,4 @@ runs:
 
         - name: Install Dependencies
           run: yarn install --frozen-lockfile --ignore-scripts
+          shell: bash

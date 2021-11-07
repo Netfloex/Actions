@@ -13,7 +13,7 @@ inputs:
         description: Username Repo and tag, user/repo:tag
 
 runs:
-    using: "composite"
+    using: composite
     steps:
         # Setup
         - name: Set up QEMU
