@@ -19,6 +19,9 @@ inputs:
         required: false
         description: Should it push the container to docker hub?
         default: true
+    file:
+        required: false
+        description: Path to the dockerfile
 
 runs:
     using: composite
@@ -46,6 +49,7 @@ runs:
               push: ${{ inputs.push }}
               tags: ${{ inputs.tags }}
               platforms: ${{ inputs.platforms }}
+              file: ${{ inputs.file }}
               # Cache
               cache-from: type=gha
               cache-to: type=gha,mode=max
