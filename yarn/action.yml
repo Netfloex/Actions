@@ -5,16 +5,16 @@ inputs:
     node-version:
         required: false
         description: Node version
-        default: 12.22.7
+        default: 16.16.0
 
 runs:
     using: composite
     steps:
         - name: Checkout
-          uses: actions/checkout@v2.4.0
+          uses: actions/checkout@v3
 
         - name: Setup NodeJS
-          uses: actions/setup-node@v2.4.1
+          uses: actions/setup-node@v3
           with:
               node-version: ${{ inputs.node-version }}
               cache: yarn
