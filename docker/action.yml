@@ -22,6 +22,9 @@ inputs:
     file:
         required: false
         description: Path to the dockerfile
+    labels:
+        required: false
+        description: List of metadata for an image
 
 runs:
     using: composite
@@ -50,6 +53,7 @@ runs:
               tags: ${{ inputs.tags }}
               platforms: ${{ inputs.platforms }}
               file: ${{ inputs.file }}
+              labels: ${{ inputs.labels }}
               # Cache
               cache-from: type=gha
               cache-to: type=gha,mode=max
